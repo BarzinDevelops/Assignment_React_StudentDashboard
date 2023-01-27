@@ -37,6 +37,30 @@ export const removeDuplicatesFromArray = (arr) => {
     return unique;
   };
 
+//   -----------------------------------------------------
 
+// Gets array of objects and name of property as prams to calculate average.
+
+export const getAverage = (objectsArray, objectPropName) => {
+    let totalValue = objectsArray.reduce(
+      (prev, curr) => prev + curr[objectPropName],
+      0
+    );
+    return totalValue / objectsArray.length;
+  };
+
+//   -----------------------------------------------------
+
+// create object containing all assignment data 
+
+export const assignemtFullData = fullAssignmentNames.map((item) => {
+  const filtered = filterByAssignmentName(item);
+  const difficulty = getAverage(
+    filtered,
+    "Hoe moeilijk vond je deze opdracht?"
+  );
+  const fun = getAverage(filtered, "Hoe leuk vond je deze opdracht?");
+  return { label: item, name: item, difficulty, fun };
+});
 
 //   -----------------------------------------------------

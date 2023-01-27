@@ -8,35 +8,10 @@ import {
 } from "victory";
 
 import { wincTheme } from "./ChartStyles";
-
-import {
-  filterByAssignmentName,
-  fullAssignmentNames,
-  shortAssignmentNames,
-} from "../data/Methods";
+import { assignemtFullData } from "../data/MethodsAndData";
 
 function OverviewChart() {
   // const uniqueAssignmentNames = removeDuplicatesFromArray(shortAssignmentNames);
-
-  // Gets array of objects and name of property as prams to calculate average.
-  const getAverage = (objectsArray, objectPropName) => {
-    let totalEarning = objectsArray.reduce(
-      (prev, curr) => prev + curr[objectPropName],
-      0
-    );
-    return totalEarning / objectsArray.length;
-  };
-
-  const assignemtFullData = fullAssignmentNames.map((item) => {
-    const filtered = filterByAssignmentName(item);
-    const difficulty = getAverage(
-      filtered,
-      "Hoe moeilijk vond je deze opdracht?"
-    );
-    const fun = getAverage(filtered, "Hoe leuk vond je deze opdracht?");
-    return { label: item, name: item, difficulty, fun };
-  });
-
   return (
     <div className="App">
       <VictoryChart theme={wincTheme} domainPadding={15}>
