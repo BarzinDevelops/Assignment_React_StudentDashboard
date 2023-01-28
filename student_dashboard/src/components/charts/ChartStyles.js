@@ -22,7 +22,7 @@ export const wincTheme = {
       style: {
         axis: {
           fill: "transparent",
-          stroke: "#90A4AE",
+          stroke: "black",
           strokeWidth: 2,
           strokeLinecap: "round",
           strokeLinejoin: "round"
@@ -30,9 +30,9 @@ export const wincTheme = {
         axisLabel: {
           textAnchor: "middle",
           fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-          fontSize: 12,
+          fontSize: 20,
           letterSpacing: "normal",
-          padding: 8,
+          padding: 100,
           fill: "#455A64",
           stroke: "transparent",
           strokeWidth: 0
@@ -43,7 +43,7 @@ export const wincTheme = {
         },
         ticks: {
           fill: "transparent",
-          size: 5,
+          size: 15,
           stroke: "#90A4AE",
           strokeWidth: 1,
           strokeLinecap: "round",
@@ -51,24 +51,26 @@ export const wincTheme = {
         },
         tickLabels: {
           fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
-          fontSize: 12,
+          fontSize: 10,
           letterSpacing: "normal",
-          padding: 8,
+          padding: 2,
           fill: "#455A64",
           stroke: "transparent",
-          strokeWidth: 0
+          strokeWidth: 10,
+          angle: -55,
+          textAnchor: "end",
         }
       },
-      width: 350,
-      height: 350,
+      width: 900,
+      height: 400,
       padding: 50
     },
     bar: {
       style: {
         data: {
           fill: "#4a90e2",
-          padding: 0,
-          strokeWidth: 0
+          padding: 10,
+          strokeWidth: 4
         },
         labels: {
           fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
@@ -184,9 +186,9 @@ export const wincTheme = {
       padding: 50
     },
     chart: {
-      width: 800,
-      height: 300,
-      padding: 50
+      width: 900,
+      height: 400,
+      padding: 30
     },
     errorbar: {
       borderWidth: 8,
@@ -222,7 +224,7 @@ export const wincTheme = {
       ],
       width: 350,
       height: 350,
-      padding: 50
+      padding: 30
     },
     legend: {
       colorScale: [

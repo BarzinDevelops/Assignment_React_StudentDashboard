@@ -60,7 +60,7 @@ export const assignemtFullData = fullAssignmentNames.map((item) => {
     "Hoe moeilijk vond je deze opdracht?"
   );
   const fun = getAverage(filtered, "Hoe leuk vond je deze opdracht?");
-  return { label: item, name: item, difficulty, fun };
+  return { name: item, difficulty, fun };
 });
 
 //   -----------------------------------------------------
