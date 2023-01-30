@@ -1,65 +1,55 @@
 import React from "react";
-import {
-  VictoryBar,
-  VictoryChart,
-  VictoryAxis,
-  VictoryTooltip,
-  VictoryGroup,
-  VictoryTheme,
-} from "victory";
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryGroup } from "victory";
 
 import { wincTheme } from "./ChartStyles";
 import {
-  assignemtFullData,
+  assignmentFullData,
   shortAssignmentNames,
   removeDuplicatesFromArray,
 } from "../data/MethodsAndData";
 
-// const { width, height } = Dimensions.get("screen");
-
 const dataCodes = removeDuplicatesFromArray(shortAssignmentNames);
 function OverviewChart() {
-  console.log("assignemtFullData =>", assignemtFullData);
+  console.log("assignemtFullData =>", assignmentFullData);
   // const uniqueAssignmentNames = removeDuplicatesFromArray(shortAssignmentNames);
   return (
     <div className="App">
-      <VictoryChart domainPadding={15} theme={wincTheme}>
-      <VictoryGroup offset={20}>
-        <VictoryBar
-          // labelComponent={<VictoryTooltip />}
-          data={assignemtFullData}
-          x=""
-          y="difficulty"
-          tickValues={[1, 2, 3, 4, 5]}
-          tickFormat={assignemtFullData.map(
-            avg => avg.name
-          )}
-          labels={assignemtFullData.map(item=>item.difficulty)}
-        />
-        <VictoryBar
-          // labelComponent={<VictoryTooltip />}
-          data={assignemtFullData}
-          x="name"
-          y="fun"
-          tickValues={[1, 2, 3, 4, 5]}
-          tickFormat={assignemtFullData.map(
-            avg => avg.name
-          )}
-          labels={assignemtFullData.map(item=>item.fun)}
-        />
-      </VictoryGroup>
-      <VictoryAxis
-        // tickValues specifies both the number of ticks and where
-        // they are placed on the axis
-        tickValues={[1, 2, 3, 4, 5]}
-        tickFormat={assignemtFullData.map(
-          avg => avg.name
-        )}
-        label={"Hallloooooo"}
-      />
-      <VictoryAxis dependentAxis />
-    </VictoryChart>
-
+      <div className="overview-chart">
+        <VictoryChart
+          domainPadding={20}
+          theme={wincTheme}
+        >
+          <VictoryGroup offset={8}>
+            <VictoryBar
+              data={assignmentFullData}
+              x="name"
+              y="difficulty"
+              labels={assignmentFullData.map((item) => item.difficulty)}
+            />
+            <VictoryBar
+              data={assignmentFullData}
+              x="name"
+              y="fun"
+              labels={assignmentFullData.map((item) => item.fun)}
+            />
+          </VictoryGroup>
+          <VictoryAxis
+            style={{
+              axisLabel: { padding: 150 },
+            }}
+            tickValues={assignmentFullData.map((item) => item.name)}
+            tickFormat={assignmentFullData.map((item) => item.name)}
+            label="All Module Subjects"
+          />
+          <VictoryAxis
+            dependentAxis
+            style={{
+              axisLabel: { padding: 40 },
+            }}
+            label="Grades for Assignments Difficulty and Enjoyment"
+          />
+        </VictoryChart>
+      </div>
     </div>
   );
 }

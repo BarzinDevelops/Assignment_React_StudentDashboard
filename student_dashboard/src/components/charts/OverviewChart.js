@@ -10,7 +10,7 @@ import {
 
 import { wincTheme } from "./ChartStyles";
 import {
-  assignemtFullData,
+  assignmentFullData,
   shortAssignmentNames,
   removeDuplicatesFromArray,
 } from "../data/MethodsAndData";
@@ -19,7 +19,7 @@ import {
 
 const dataCodes = removeDuplicatesFromArray(shortAssignmentNames);
 function OverviewChart() {
-  console.log("assignemtFullData =>", assignemtFullData);
+  console.log("assignmentFullData =>", assignmentFullData);
   // const uniqueAssignmentNames = removeDuplicatesFromArray(shortAssignmentNames);
   return (
     <div className="App">
@@ -46,10 +46,10 @@ function OverviewChart() {
               duration: 3000,
             },
           }}
-          labels={assignemtFullData.map((item) => item.fun)}
+          labels={assignmentFullData.map((item) => item.fun)}
           // tickValues={[1, 2, 3, 4]}
           tickFormat={dataCodes}
-          data={assignemtFullData}
+          data={assignmentFullData}
           x="name"
           y="difficulty"
         />
@@ -64,10 +64,10 @@ function OverviewChart() {
               duration: 3000,
             },
           }}
-          labels={assignemtFullData.map((item) => item.fun)}
+          labels={assignmentFullData.map((item) => item.fun)}
           // tickValues={[1, 2, 3, 4]}
           tickFormat={dataCodes}
-          data={assignemtFullData}
+          data={assignmentFullData}
           x="name"
           y="difficulty"
         />
@@ -76,7 +76,7 @@ function OverviewChart() {
         <VictoryAxis
           label="Time (ms)"
           // tickValues={[1,2,3,4,5,6]}
-          tickFormat={assignemtFullData.map((item) => item.name)}
+          tickFormat={assignmentFullData.map((item) => item.name)}
           style={{
             // padding: "50px",
             axis: { stroke: "black" },

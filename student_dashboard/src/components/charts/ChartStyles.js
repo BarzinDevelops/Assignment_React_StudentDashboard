@@ -25,15 +25,15 @@ export const wincTheme = {
           stroke: "black",
           strokeWidth: 2,
           strokeLinecap: "round",
-          strokeLinejoin: "round"
+          strokeLinejoin: "round",
+          
         },
         axisLabel: {
           textAnchor: "middle",
           fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
           fontSize: 20,
           letterSpacing: "normal",
-          padding: 100,
-          fill: "#455A64",
+          fill: "black",
           stroke: "transparent",
           strokeWidth: 0
         },
@@ -54,23 +54,24 @@ export const wincTheme = {
           fontSize: 10,
           letterSpacing: "normal",
           padding: 2,
-          fill: "#455A64",
+          fill: "black",
           stroke: "transparent",
           strokeWidth: 10,
           angle: -55,
           textAnchor: "end",
         }
       },
-      width: 900,
-      height: 400,
-      padding: 50
+      width: 1200,
+      height: 500,
+      // padding: 50
     },
     bar: {
       style: {
         data: {
           fill: "#4a90e2",
           padding: 10,
-          strokeWidth: 4
+          strokeWidth: 4,
+          
         },
         labels: {
           fontFamily: "'Roboto', 'Helvetica Neue', Helvetica, sans-serif",
@@ -80,8 +81,10 @@ export const wincTheme = {
           fill: "#455A64",
           stroke: "transparent",
           strokeWidth: 0
-        }
+        },
+        alignment: 'start',
       },
+      
       width: 350,
       height: 350,
       padding: 20
@@ -186,9 +189,10 @@ export const wincTheme = {
       padding: 50
     },
     chart: {
-      width: 900,
-      height: 400,
-      padding: 30
+      width: 1200,
+      height: 496,
+      padding: 100,
+      
     },
     errorbar: {
       borderWidth: 8,
@@ -222,9 +226,9 @@ export const wincTheme = {
         "#00796B",
         "#006064"
       ],
-      width: 350,
-      height: 350,
-      padding: 30
+      // width: 350,
+      // height: 350,
+      // padding: 30
     },
     legend: {
       colorScale: [

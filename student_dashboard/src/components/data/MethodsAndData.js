@@ -53,7 +53,7 @@ export const getAverage = (objectsArray, objectPropName) => {
 
 // create object containing all assignment data 
 
-export const assignemtFullData = fullAssignmentNames.map((item) => {
+export const assignmentFullData = fullAssignmentNames.map((item) => {
   const filtered = filterByAssignmentName(item);
   const difficulty = getAverage(
     filtered,
