@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../../assets/data.json";
+import data from "../data/data.json";
 import { VictoryChart, VictoryBar, VictoryGroup, VictoryAxis, VictoryTheme, VictoryContainer } from 'victory';
 
 let newData = []

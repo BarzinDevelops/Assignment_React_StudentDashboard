@@ -1,27 +1,18 @@
-import React, { Fragment } from "react";
-// import OverviewChart from "./components/charts/OverviewChart";
-// import Testing from './components/charts/Testing';
+import { Outlet, Link } from "react-router-dom";
 
-import AssignmentChart from "./components/charts/AssignmentChart";
-import StudentChart from "./components/charts/StudentChart";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-const App = () => {
+function App() {
   return (
-    <div className="app-container">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<div>Home</div>}/>
-          <Route path="student" element={<div>Student</div>}/>
-        </Routes>
-      </BrowserRouter>
-      {/* <OverviewChart /> */}
-      {/* <Testing /> */}
-      <AssignmentChart />
-      <StudentChart />
+    <div className="App">
+      <header className="App-header">
+        <nav className="App-nav">
+          <Link className="appLink" to="/">Home</Link> |{" "}  
+          <Link className="appLink" to="/Students">Select Student</Link> |{" "}  
+          <Link className="appLink" to="/Assignments">Select Assignment</Link>
+        </nav>
+      <Outlet />  
+      </header>
     </div>
-  );
+  )
 }
 
 export default App;
