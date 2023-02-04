@@ -46,7 +46,8 @@ class AssignmentChart extends React.Component {
    
     render() {
       return (
-        <div>
+        <div className="charts-container">
+          <div className="controls">
           <label className="diff">
             <input 
               className="blue-input"
@@ -67,13 +68,13 @@ class AssignmentChart extends React.Component {
             /> 
             Enjoyment
           </label>
-          
+          </div>
           <VictoryChart
             domainPadding={{x: 15}}
             domain={{ x: [0, 10], y: [0.0, 5.0] }}
             theme={VictoryTheme.material}
-            width={800} height={300}
-            containerComponent={<VictoryContainer responsive={false}/>}
+            width={800} height={400}
+            containerComponent={<VictoryContainer responsive={true}/>}
           >
           <VictoryAxis 
             style={{ ticks: {stroke: "grey", size: 5},

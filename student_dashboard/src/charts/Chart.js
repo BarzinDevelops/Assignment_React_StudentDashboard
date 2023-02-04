@@ -58,7 +58,8 @@ class Chart extends React.Component {
 
     render() {
       return (
-        <div>
+        <div className="charts-container">
+        <div className="controls">
           <button onClick={this.handleClick}>Change Chart Type</button>
           <br />
           <label className="diff">
@@ -81,15 +82,16 @@ class Chart extends React.Component {
             /> 
             Enjoyment
           </label>
-                   
+          </div>         
           {this.state.changeGraph ?
-            <VictoryChart
-              domainPadding={{x: 15}}
-              domain={{ x: [0, 56], y: [0.0, 5.0] }}
-              theme={VictoryTheme.material}
-              width={1200} height={300}
-              containerComponent={<VictoryContainer responsive={false}/>}
-            >
+                    <VictoryChart
+                    domainPadding={{ x: 15 }}
+                    domain={{ x: [0, 56], y: [0.0, 5.0] }}
+                    theme={VictoryTheme.material}
+                    width={1120}
+                    height={500}
+                    containerComponent={<VictoryContainer responsive={true} />}
+                  >
             <VictoryAxis 
               style={{ ticks: {stroke: "grey", size: 5},
               tickLabels: {angle: 45, fontSize: 12, padding: 5, textAnchor: 'begin'} }}
@@ -130,7 +132,7 @@ class Chart extends React.Component {
             domain={{ x: [0, 56], y: [0.0, 5.0] }}
             theme={VictoryTheme.material}
             width={1200} height={300}
-            containerComponent={<VictoryContainer responsive={false}/>}
+            containerComponent={<VictoryContainer responsive={true}/>}
           >
         
         {this.state.difficulty ? 
@@ -161,6 +163,7 @@ class Chart extends React.Component {
           </VictoryChart> }       
 
         </div> 
+        
     )}
 }    
 

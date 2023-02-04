@@ -5,8 +5,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <nav className="App-nav">
-          <Link className="appLink" to="/">Home</Link> |{" "}  
-          <Link className="appLink" to="/Students">Select Student</Link> |{" "}  
+          <Link className="appLink" to="/" >Home</Link><span className="link-seperator">| {" "}</span>   
+          <Link className="appLink" to="/Students">Select Student</Link> <span className="link-seperator">| {" "}</span>  
           <Link className="appLink" to="/Assignments">Select Assignment</Link>
         </nav>
       <Outlet />  

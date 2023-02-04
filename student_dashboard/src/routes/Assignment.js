@@ -5,7 +5,7 @@ export default function Assignment() {
     let params = useParams();
     return (
         <main>
-            <h2>{params.AssignmentId}</h2>
+            <h1 className="main-titles">{params.AssignmentId}</h1>
             <AssignmentChart assignment={params.AssignmentId} />
         </main>
     );
