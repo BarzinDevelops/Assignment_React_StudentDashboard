@@ -15,24 +15,20 @@ export default function Students() {
   return (
     <div className="Student-div">
       <nav className="Student-nav">
-        {singleStudent.map(
-          (student,i) =>
-            (
-              <span>
-              <Link
+        {singleStudent.map((student, i) => (
+          <span>
+            <Link
               key={student.name}
-                className={`studentLink ${i===0 ? 'selected': ''}`}
-                to={`/Students/${student.name}`}
-                
-              >
-                {student.name}
-
-              </Link> <span className="link-seperator">| {" "}</span> 
-               </span>
-            ) 
-        )}
+              className={`studentLink ${i === 0 ? "selected" : ""}`}
+              to={`/Students/${student.name}`}
+            >
+              {student.name}
+            </Link>{" "}
+            <span className="link-seperator">| </span>
+          </span>
+        ))}
       </nav>
-      
+
       <Outlet />
     </div>
   );
